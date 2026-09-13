@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxd Mod Gathering - Repository Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Content Card */
+        .main-card {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-right: 20px;
+            color: #667eea;
+        }
+
+        .card-header h2 {
+            font-size: 2em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-section {
+            margin-bottom: 40px;
+        }
+
+        .about-section h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-section h3::before {
+            content: "►";
+            margin-right: 10px;
+            color: #764ba2;
+        }
+
+        .about-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        /* Tech Stack Section */
+        .tech-stack {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .tech-stack h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tech-stack h3::before {
+            content: "⚙";
+            margin-right: 10px;
+            font-size: 1.3em;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Purpose Section */
+        .purpose-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .purpose-box h3 {
+            color: #c92a2a;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .purpose-box h3::before {
+            content: "★";
+            margin-right: 10px;
+            color: #ff6b6b;
+        }
+
+        .purpose-box p {
+            color: #5c2e2e;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .info-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .info-item:hover {
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
+        }
+
+        .info-item h4 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .info-item p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+
+        footer h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        footer p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .repo-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .repo-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-card {
+                padding: 30px 20px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .card-header h2 {
+                font-size: 1.5em;
+            }
+
+            .icon {
+                font-size: 2em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🎮 Bloxd Mod Gathering</h1>
+            <p>Your Central Hub for Bloxd.io Mods and Codes</p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-card">
+            <!-- Card Header -->
+            <div class="card-header">
+                <div class="icon">📦</div>
+                <h2>Repository Overview</h2>
+            </div>
+
+            <!-- About Section -->
+            <div class="about-section">
+                <h3>What is This Repository?</h3>
+                <p>
+                    BloxdModGathering is a dedicated collection repository designed to aggregate and organize mods, codes, and enhancements for the popular online game <strong>Bloxd.io</strong>. This repository serves as a centralized hub for developers and players looking to extend the functionality and customization options of Bloxd.io.
+                </p>
+                <p>
+                    Whether you're a mod developer looking to share your creations or a player searching for game enhancements, this repository provides an organized space to discover, contribute, and manage custom mods and codes.
+                </p>
+            </div>
+
+            <!-- Purpose Box -->
+            <div class="purpose-box">
+                <h3>Primary Purpose</h3>
+                <p>
+                    This repository exists to gather, catalog, and maintain a collection of mods and custom codes that enhance the Bloxd.io gaming experience. It's a community-driven project that enables players and developers to collaborate, share innovations, and expand the game's possibilities beyond its original functionality.
+                </p>
+            </div>
+
+            <!-- Features Section -->
+            <h3 style="color: #667eea; font-size: 1.8em; margin-bottom: 20px; display: flex; align-items: center;">
+                <span style="color: #764ba2; margin-right: 10px;">✨</span>
+                Key Features & Focus Areas
+            </h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>🔧 Mod Collection</h4>
+                    <p>Curated mods that add new features, gameplay mechanics, and visual enhancements to Bloxd.io</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💻 Code Snippets</h4>
+                    <p>Reusable JavaScript code examples and utilities for Bloxd.io customization and scripting</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📚 Documentation</h4>
+                    <p>Clear instructions and guides on how to implement and use each mod or code snippet</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🤝 Community Driven</h4>
+                    <p>Open source repository welcoming contributions from developers and enthusiasts worldwide</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎯 Organized Structure</h4>
+                    <p>Well-organized repository layout making it easy to find, browse, and manage content</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🚀 Active Maintenance</h4>
+                    <p>Regularly updated with new mods, codes, and improvements to stay current with Bloxd.io updates</p>
+                </div>
+            </div>
+
+            <!-- Tech Stack -->
+            <div class="tech-stack">
+                <h3>Technology Stack</h3>
+                <div class="tech-badges">
+                    <div class="badge">JavaScript 100%</div>
+                    <div class="badge">Mod Development</div>
+                    <div class="badge">Game Enhancement</div>
+                    <div class="badge">Open Source</div>
+                </div>
+            </div>
+
+            <!-- Info Grid -->
+            <h3 style="color: #667eea; font-size: 1.8em; margin-top: 40px; margin-bottom: 20px; display: flex; align-items: center;">
+                <span style="color: #764ba2; margin-right: 10px;">ℹ️</span>
+                Repository Information
+            </h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>Repository Type</h4>
+                    <p>Public Collection Hub</p>
+                </div>
+                <div class="info-item">
+                    <h4>Primary Language</h4>
+                    <p>JavaScript</p>
+                </div>
+                <div class="info-item">
+                    <h4>Target Platform</h4>
+                    <p>Bloxd.io</p>
+                </div>
+                <div class="info-item">
+                    <h4>Contribution Type</h4>
+                    <p>Community Mods & Code</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <h3>Get Started</h3>
+            <p>Ready to explore mods and codes for Bloxd.io? Visit the repository to browse our collection, contribute your own creations, or learn from the community.</p>
+            <p style="color: #999; font-size: 0.9em; margin-top: 20px;">
+                <strong>Repository:</strong> Shahadah-studs/BloxdModGathering
+            </p>
+            <a href="https://github.com/Shahadah-studs/BloxdModGathering" class="repo-link">📍 View on GitHub</a>
+        </footer>
+    </div>
+</body>
+</html>
