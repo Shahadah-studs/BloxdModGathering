@@ -111,15 +111,15 @@ Feel free to create new mods or code snippets! See the [Contributing](#contribut
 ### Example Mods & Features
 
 - **Super Pickaxe** – Advanced mining tool with 3×3×3 block excavation and particle effects
-- *(More mods coming soon!)*
+- *(More mods coming on this list  soon! want a mod? visit the 2 folders!)*
 
 ---
 
 ## Technologies Used
 
 ### Primary Stack
-- **JavaScript** (74.3%) – Core language for all mods and world code
-- **HTML** (25.7%) – GitHub Pages portal and documentation
+- **JavaScript** – Core language for all mods and world code
+- **HTML**  – GitHub Pages portal and documentation
 
 ### Bloxd.io API
 - `api.getHeldItem()` – Retrieve player's held item
