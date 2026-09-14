@@ -208,8 +208,8 @@ Special thanks to:
 
 <div align="center">
 
-**Made with ❤️ by the Bloxd.io Community**
+**Made with ❤️ by the Bloxd.io Community & Shahadah Studios Elite**
 
-*Have a mod to share? Fork this repo and contribute! 🚀*
+*Have a mod to share? Fork this repo and contribute or create an issue with your new mod! 🚀*
 
 </div>
